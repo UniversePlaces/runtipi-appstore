@@ -4,18 +4,12 @@
       "name": "baserow",
       "image": "baserow/baserow:1.33.2",
       "environment": {
+        "WEB_FRONTEND_SSL_PORT": "\\",
         "BASEROW_PUBLIC_URL": "https://baserow.krkw.pl",
-        "WEB_FRONTEND_SSL_PORT": 3002,
         "WEB_FRONTEND_PORT": 3001
       },
       "internalPort": 3001,
       "addPorts": [
-        {
-          "containerPort": 3002,
-          "hostPort": 3002,
-          "tcp": true,
-          "udp": false
-        },
         {
           "containerPort": 3001,
           "hostPort": 3001,
