@@ -4,7 +4,7 @@
       "name": "baserow",
       "image": "baserow/baserow:1.33.2",
       "environment": {
-        "BASEROW_PUBLIC_URL": "http://localhost"
+        "BASEROW_PUBLIC_URL": "https://baserow.krkw.pl"
       },
       "internalPort": 80,
       "addPorts": [
