@@ -44,7 +44,9 @@
         "POSTGRES_PASSWORD": "${DB_PASSWORD}",
         "POSTGRES_USER": "baserow",
         "POSTGRES_DB": "baserow",
-        "POSTGRES_HOST_AUTH_METHOD": "trust"
+        "POSTGRES_HOST_AUTH_METHOD": "trust",
+        "WEB_FRONTEND_SSL_PORT": 444,
+        "WEB_FRONTEND_PORT": 3000
       },
       "healthCheck": {
         "test": "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}",
