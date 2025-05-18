@@ -10,7 +10,7 @@
       "addPorts": [
         {
           "containerPort": 443,
-          "hostPort": 443,
+          "hostPort": 8382,
           "tcp": true,
           "udp": false
         }
