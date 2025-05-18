@@ -1,0 +1,37 @@
+{
+  "services": [
+    {
+      "name": "baserow",
+      "image": "baserow/baserow:1.33.2",
+      "environment": {
+        "BASEROW_PUBLIC_URL": "https://baserow.krkw.pl",
+        "WEB_FRONTEND_SSL_PORT": 444,
+        "WEB_FRONTEND_PORT": 3001
+      },
+      "internalPort": 444,
+      "addPorts": [
+        {
+          "containerPort": 444,
+          "hostPort": 444,
+          "tcp": true,
+          "udp": false
+        },
+        {
+          "containerPort": 3001,
+          "hostPort": 3001,
+          "tcp": true,
+          "udp": false
+        }
+      ],
+      "volumes": [
+        {
+          "hostPath": "baserow_data",
+          "containerPath": "/baserow/data",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        }
+      ]
+    }
+  ]
+}
