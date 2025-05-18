@@ -13,13 +13,12 @@
 
       },
       "dependsOn": ["baserow-db"],
-      "internalPort": 80,
       "addPorts": [
         {
-          "containerPort": 443,
+          "containerPort": 80,
           "hostPort": 8382,
           "tcp": true,
-          "udp": false
+          "udp": true
         }
       ],
       "volumes": [
