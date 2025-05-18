@@ -1,0 +1,29 @@
+{
+  "services": [
+    {
+      "name": "baserow",
+      "image": "baserow/baserow:1.33.2",
+      "environment": {
+        "BASEROW_PUBLIC_URL": "http://localhost"
+      },
+      "internalPort": 80,
+      "addPorts": [
+        {
+          "containerPort": 443,
+          "hostPort": 443,
+          "tcp": true,
+          "udp": false
+        }
+      ],
+      "volumes": [
+        {
+          "hostPath": "baserow_data",
+          "containerPath": "/baserow/data",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        }
+      ]
+    }
+  ]
+}
