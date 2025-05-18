@@ -10,7 +10,7 @@
   ],
   "description": "Baserow is an open source no-code database and Airtable alternative.",
   "tipi_version": 2,
-  "version": "v1.3.22",
+  "version": "v1.33.2",
   "source": "https://gitlab.com/baserow/baserow",
   "exposable": true,
   "supported_architectures": [
