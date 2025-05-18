@@ -24,7 +24,7 @@
       ],
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/data/baserow",
+          "hostPath": "${APP_DATA_DIR}/apps/migrated/baserow",
           "containerPath": "/baserow/data",
           "readOnly": false,
           "shared": false,
@@ -37,7 +37,7 @@
       "image": "postgres:12-alpine",
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/data/baserow/postgres",
+          "hostPath": "${APP_DATA_DIR}/apps/migrated/baserow/postgres",
           "containerPath": "/var/lib/postgresql/data"
         }
       ],
