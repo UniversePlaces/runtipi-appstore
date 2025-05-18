@@ -43,7 +43,8 @@
       "environment": {
         "POSTGRES_PASSWORD": "${DB_PASSWORD}",
         "POSTGRES_USER": "baserow",
-        "POSTGRES_DB": "baserow"
+        "POSTGRES_DB": "baserow",
+        "POSTGRES_HOST_AUTH_METHOD": "trust"
       },
       "healthCheck": {
         "test": "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}",
