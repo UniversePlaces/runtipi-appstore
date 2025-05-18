@@ -20,5 +20,18 @@
   "created_at": 1745082405284,
   "updated_at": 1745674974072,
   "dynamic_config": true,
-  "form_fields": []
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "DB_PASSWORD",
+      "min": 40,
+      "env_variable": "DB_PASSWORD"
+    },
+    {
+      "type": "random",
+      "label": "SECRET_KEY",
+      "min": 50,
+      "env_variable": "SECRET_KEY"
+    }
+  ]
 }

@@ -4,8 +4,15 @@
       "name": "baserow",
       "image": "baserow/baserow:1.33.2",
       "environment": {
-        "BASEROW_PUBLIC_URL": "https://baserow.krkw.pl"
+        "BASEROW_PUBLIC_URL": "https://baserow.krkw.pl",
+        "DATABASE_HOST": "baserow-db",
+        "DATABASE_PORT": "5432",
+        "DATABASE_NAME": "baserow",
+        "DATABASE_USER": "baserow",
+        "DATABASE_PASSWORD": "${DB_PASSWORD}"
+
       },
+      "dependsOn": ["baserow-db"],
       "internalPort": 80,
       "addPorts": [
         {
@@ -24,6 +31,28 @@
           "private": false
         }
       ]
+    },
+    {
+      "name": "baserow-db",
+      "image": "postgres:12-alpine",
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/baserow/postgres",
+          "containerPath": "/var/lib/postgresql/data"
+        }
+      ],
+      "environment": {
+        "POSTGRES_PASSWORD": "${DB_PASSWORD}",
+        "POSTGRES_USER": "baserow",
+        "POSTGRES_DB": "baserow"
+      },
+      "healthCheck": {
+        "test": "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}",
+        "interval": "30s",
+        "timeout": "5s",
+        "retries": 5,
+        "startPeriod": "20s"
+      }
     }
   ]
 }
